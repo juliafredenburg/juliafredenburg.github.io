@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Federal Grants for Cities FY2016</title>
+        <title>"Fed Grants as % of Total Budget"</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
 
@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="bar4" width=auto max-height="400"></canvas>
+<canvas id="bar1" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -64,20 +64,20 @@ Chart.defaults.scale = {
 
 // Chart.defaults.global.defaultFontSize = 10
 
-var ctx = document.getElementById("bar4");
+var ctx = document.getElementById("bar1");
 
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["New York City", "Chicago", "San Francisco", "Los Angeles", "Seattle", "Minneapolis", "Philadelphia"],
+        labels: ["Chicago", "New York City", "San Francisco", "Los Angeles", "Minneapolis", "Seattle", "Philadelphia"],
         datasets: [{
-            label: 'Federal Grants for Cities FY2016',
+            label: 'Fed Grants as % of Total Budget',
             backgroundColor:["#228AE6","#228AE6","#3896e8","#3896e8","#409AE9","#489eea","#4fa2eb","#57a6ec","#5eaaec","#66aeed","#6eb2ee","#75b6ef","#7dbaf0","#85bef1","#8cc2f2","#94c6f2","#9bcaf3","#a3cef4","#abd2f5","#b2d6f6","#badaf7","#c2def8","#c9e2f8","#D1e6f9","#d8eafa","#e0eefb","#e8f2fc","#eff6fd","#f7fafe"],
             borderColor: "#eeeeee",
             borderWidth: 0,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [7090000000, 1051800000, 448394850, 414305896, 43593126, 29700000, 29000000]
+            data: [11.26, 8.40, 5.02, 4.83, 2.21, 0.85, 0.74]
         }]
 
     },
@@ -95,7 +95,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '$' + (value/1000000000).toLocaleString() + 'B';
+              return  value.toLocaleString() + '%';
             }
           }
         }]
@@ -103,7 +103,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return '%' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
           },
         }
       }
