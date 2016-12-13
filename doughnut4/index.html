@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Los Angeles Revenue Sources FY2016</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut4" width="300" height="300"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
+
+
+
+
+
+var ctx = document.getElementById("doughnut4");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+                  "Property Taxes",
+                  "Other Fees",
+                  "Licenses and Fees",
+                  "Sewer Revenue",
+                  "Special Fund Available Balances",
+                  "Business and Transient Occupancy Taxes",
+                  "Utility Users’ Tax",
+                  "Federal Grants",
+                  "State Grants",
+                  "Other Grants",
+                  "Sales Tax",
+                  "Water & Power Transfers ",
+                  "Documentary Tax",
+                  "Other",
+                  "Parking Fines ",
+                  "Airport & Harbor Retirement Transfers ",
+                  "Airport & Harbor Transfers",
+                  "Reserve Fund Transfer"
+                ],
+        datasets: [{
+            label: 'Los Angeles Revenue Sources FY2016',
+            backgroundColor:"#76FF03",
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [22.8,10,9.3,9.3,8.7,8.3,7.3,4.83,1.67,0.1,5,3.5,2.4,2,1.9,1.2,1,0.7]
+            }]
+    },
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>
