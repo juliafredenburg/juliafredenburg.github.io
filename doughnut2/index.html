@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New York Revenue Sources FY2016</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut2" width="300" height="300"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
+
+
+
+
+
+var ctx = document.getElementById("doughnut2");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+                  "Property Tax",
+                  "State Grants",
+                  "Income Taxes",
+                  "Federal Grants",
+                  "Other Local Taxes",
+                  "Sales Taxes",
+                  "Other Non-Tax Revenue",
+                  "Fines, Forfeitures and Penalties",
+                  "Sewer & Water",
+                  "Other Grants",
+                  "Utility Taxes"
+                ],
+        datasets: [{
+            label: 'Chicago Revenue Sources FY2016',
+            backgroundColor:"#00B0FF",
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [27.19,16.02,12.82,10.13,9.69,8.24,7.42,5.46,1.73,0.88,0.43]
+            }]
+    },
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>
