@@ -77,9 +77,27 @@
         var table = new google.visualization.Table(document.getElementById('colorformat_div'));
 
         var formatter = new google.visualization.ColorFormat();
-        formatter.addRange(-20000, 0, 'white', 'orange'); // min,max,text color, cell color
-        formatter.addRange(20000, null, 'red', 'blue'); // min,max,text color, cell color
-        formatter.format(data, 1); // Apply formatter to second column
+        formatter.addGradientRange(-7.7, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 5.7, 'black', 'white','#ff4444');
+        formatter.format(data, 1);
+        formatter.addGradientRange(-4.04, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 8.29, 'black', 'white','#ff4444');
+        formatter.format(data, 2); // Apply formatter to 3rd column
+        formatter.addGradientRange(-8.42, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 4.65, 'black', 'white','#ff4444');
+        formatter.format(data, 3);
+        formatter.addGradientRange(-13.24, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 10.28, 'black', 'white','#ff4444');
+        formatter.format(data, 4);
+        formatter.addGradientRange(-4.78, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 7.65, 'black', 'white','#ff4444');
+        formatter.format(data, 5);
+        formatter.addGradientRange(-5.5, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 8.51, 'black', 'white','#ff4444');
+        formatter.format(data, 6); // Apply formatter to second column
+        formatter.addGradientRange(-1.8, 0, 'black', '#00b0f0', 'white');
+        formatter.addGradientRange(0, 4.55, 'black', 'white','#ff4444');
+        formatter.format(data, 7);
 
 
         table.draw(data, {allowHtml: true, showRowNumber: true, width: '100%', height:'100%'});
