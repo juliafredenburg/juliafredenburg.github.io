@@ -18,6 +18,9 @@ async function getData() {
   const response = await fetch('test.csv');
   const data = await response.text();
   console.log(data);
+
+  const rows = data.split('\n');
+
 }
 
   </script>
