@@ -20,8 +20,10 @@ async function getData() {
   console.log(data);
 
   const rows = data.split('\n').slice(1);
-  console.log(rows);
-
+  rows.forEach(elt => {
+    const row = elt.split(',');
+    console.log(row)
+  });
 }
 
   </script>
