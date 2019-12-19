@@ -12,7 +12,7 @@
     console.log('im about to fetch a rainbow');
 
     catchRainbow()
-    .then(response = {
+    .then(response => {
       console.log('yay');
     })
     .catch(error => {
@@ -23,7 +23,6 @@
       const response = await fetch('rainbow.jpg');
       const blob = await response.blob();
       document.getElementById('rainbow').src = URL.createObjectURL(blob);
-
     }
 
   </script>
