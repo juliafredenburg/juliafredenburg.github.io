@@ -10,7 +10,9 @@
   <img src="" id="rainbow" />
   <script>
     console.log('im about to fetch a rainbow');
-    fetch('rainbow.jpg');
+    fetch('rainbow.jpg').then(response => {
+        console.log(response);
+    });
 
   </script>
 
