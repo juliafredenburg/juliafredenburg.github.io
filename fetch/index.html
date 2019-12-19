@@ -11,7 +11,10 @@
   <script>
     console.log('im about to fetch a rainbow');
 
-    catchRainbow();
+    catchRainbow().catch(error => {
+      console.log('error!');
+      console.error(error);
+    });
 
     async function catchRainbow() {
       const response = await fetch('rainbow.jpg');
@@ -24,7 +27,3 @@
 
 </body>
 </html>
-.catch(error => {
-  console.log('error!');
-  console.error(error);
-});
