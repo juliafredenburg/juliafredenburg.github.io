@@ -4,22 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Fetch and Graph CSV</title>
+  <title>Coding Train: Data/APIs 1</title>
 </head>
 <body>
+  <img src="" id="rainbow" />
   <script>
-  //Data from: https://data.giss.nasa.gov/gistemp/
-  //Mean from:
-
-
-getData();
-
-async function getData() {
-  const response = await fetch('test.csv');
-  const data = await response.text();
-  console.log(data);
-}
+    console.log('im about to fetch a rainbow');
+    fetch('rainbow.jpg');
 
   </script>
+
 </body>
 </html>
