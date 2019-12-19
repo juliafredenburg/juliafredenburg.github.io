@@ -15,7 +15,7 @@
 getData();
 
 async function getData() {
-  const response = await fetch('test.csv');
+  const response = await fetch('ZonAnn.Ts+dSST.csv');
   const data = await response.text();
 
   const rows = data.split('\n').slice(1);
