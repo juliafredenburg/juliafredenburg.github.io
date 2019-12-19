@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Fetch and Graph CSV</title>
+</head>
+<body>
+  <script>
+  //Data from: https://data.giss.nasa.gov/gistemp/
+  //Mean from:
+
+
+getData();
+
+async function getData(){
+  const response = await fetch('test.csv');
+  const data = await response.text();
+  console.log(data);
+}
+
+  </script>
+</body>
+</html>
