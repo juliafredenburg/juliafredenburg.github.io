@@ -10,10 +10,14 @@
 <body>
   <canvas id ="chart" width="400" height="400"></canvas>
   <script>
-  function chartIt() {
-  const ctx = document.getElementById('chart').getContext('2d');
   const xlabels = [];
-  const myChart = new Chart(ctx, {
+
+  chartIt();
+
+  async function chartIt() {
+    await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
           labels: xlabels,
@@ -28,7 +32,7 @@
   });
 }
 
-getData();
+
 
 async function getData() {
   const response = await fetch('ZonAnn.Ts+dSST.csv');
