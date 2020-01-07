@@ -8,8 +8,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
 <body>
+  //CHART JS
   <canvas id ="chart" width="400" height="400"></canvas>
   <script>
+  // Data from: https://data.giss.nasa.gov/gistemp/
+  // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
+  
   const xlabels = [];
   const ytemps = [];
 
@@ -32,7 +36,7 @@
       }
   });
 }
-
+//SPLITTING AND BRINGING IN CSV DATA
 async function getData() {
   const response = await fetch('ZonAnn.Ts+dSST.csv');
   const data = await response.text();
