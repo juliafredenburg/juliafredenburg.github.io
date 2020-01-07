@@ -13,7 +13,7 @@
   <script>
   // Data from: https://data.giss.nasa.gov/gistemp/
   // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
-  
+
   const xlabels = [];
   const ytemps = [];
 
@@ -47,7 +47,7 @@ async function getData() {
     const year = columns[0];
     xlabels.push(year);
     const temp = columns[1];
-    ytemps.push(temp);
+    ytemps.push(parseFloat(temp) + 14); //make data from string to number and added mean temp of 14 degrees
     console.log(year, temp);
   });
 }
