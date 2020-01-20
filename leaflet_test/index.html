@@ -16,6 +16,7 @@
     <!-- Load Esri Leaflet, use newest version at http://esri.github.io/esri-leaflet -->
     <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
 
+
     <!-- style the map -->
     <style>
       body {
@@ -36,7 +37,6 @@
 
   <!-- Create div element to house the map -->
   <div id="map"></div>
-
   <script>
     // Initialize the map with specified center coordinates and zoom level
     var map = L.map('map', {
@@ -66,6 +66,7 @@
     // Esri streets basemapLayer (dependency: Esri leaflet plugin)
     var Esri_Streets =   L.esri.basemapLayer('Streets');
     controlLayers.addBaseLayer(Esri_Streets, 'Street basemap (Esri)');
+
 
     /* OVERLAYS */
 
@@ -200,6 +201,7 @@
       });
       controlLayers.addOverlay(zoning, 'Downtown zoning (individual public data-ArcGIS Online)');
 
+    
     </script>
 
   </body>
