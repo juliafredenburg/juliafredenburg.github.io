@@ -12,7 +12,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
-  Chart.defaults.global.gridLines.display = false
+
   chartIt();
 
   async function chartIt() {
@@ -41,7 +41,15 @@
               },
               beginAtZero: true
             },
-          }]
+            gridLines{
+              display: false
+            }
+          }],
+          xAxes: [(
+            gridLines{
+              display: false
+            }
+          )]
         },
         tooltips: {
           callbacks: {
