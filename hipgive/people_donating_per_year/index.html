@@ -12,6 +12,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.tooltips.fontFamily = 'open sans'
 
   chartIt();
 
@@ -44,6 +45,16 @@
             gridLines: {
               display: false
             }
+          }],
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              }
+            },
+            gridLines: {
+              display: false
+            }
           }]
         },
         tooltips: {
@@ -51,7 +62,8 @@
             label: function(tooltipItem, data) {
               return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' People';
             },
-          }
+          },
+          backgroundColor: '#434343'
         }
       }
     });
