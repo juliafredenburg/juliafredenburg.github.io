@@ -11,7 +11,8 @@
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
-  Chart.defaults.global.legend.display = false
+  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.gridLines.display = false
   chartIt();
 
   async function chartIt() {
@@ -40,11 +41,7 @@
               },
               beginAtZero: true
             },
-            gridLines.display: false,
-          }],
-            xAxes: [{
-              gridLines.display: false,
-              }]
+          }]
         },
         tooltips: {
           callbacks: {
