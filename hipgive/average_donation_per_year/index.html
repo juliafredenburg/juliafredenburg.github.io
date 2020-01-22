@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>People Donating Per Year</title>
+  <title>Average Donation Per Year</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'People Donating Per Year',
+          label: 'Average Donation Per Year',
           data: data.ys,
           fill: false,
           backgroundColor: '#fcb846',
@@ -46,7 +46,7 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '$' + value.toLocaleString('en-US')/* + ' People'*/;
+                return '$'+ value.toLocaleString('en-US')/* + ' People'*/;
               },
               beginAtZero: true,
             },
@@ -55,7 +55,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'People'
+              labelString: 'Average Donation'
             }
           }],
           xAxes: [{
@@ -73,12 +73,12 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' People';
+              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '';
             },
           },
           backgroundColor: '#434343',
           borderColor: '#f5f5f5',
-          borderWidth: 1,
+          borderWidth: 2,
           displayColors: false
         }
       }
@@ -89,7 +89,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('people_donating_per_year.csv');
+    const response = await fetch('average_donation_per_year.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
@@ -97,9 +97,9 @@
       const columns = row.split(',');
       const year = columns[0];
       xs.push(year);
-      const payers = columns[1];
-      ys.push(parseFloat(payers)); //make data from string to number and added mean payers of 14 degrees
-      console.log(year, payers);
+      const donations = columns[1];
+      ys.push(parseFloat(donations)); //make data from string to number and added mean payers of 14 degrees
+      console.log(year, donations);
     });
     return { xs, ys };
   }
