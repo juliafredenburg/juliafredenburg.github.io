@@ -46,7 +46,7 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US')/* + ' People'*/;
+                return '$' + value.toLocaleString('en-US')/* + ' People'*/;
               },
               beginAtZero: true,
             },
@@ -73,7 +73,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Donation Per Person';
+              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Donation Per Person';
             },
           },
           backgroundColor: '#434343',
