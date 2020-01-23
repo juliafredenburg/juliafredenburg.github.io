@@ -43,11 +43,8 @@
       options: {
         cornerRadius: 20,
         scales: {
-          yAxes: [{
+          xAxes: [{
             ticks: {
-              //max: 5,
-              //min: 200000,
-              //stepSize: 200000,
               callback: function(value, index, values) {
                 return '$' + value.toLocaleString('en-US')+' ';
               },
@@ -61,7 +58,7 @@
               labelString: 'Donations'
             }
           }],
-          xAxes: [{
+          yAxes: [{
             ticks: {
               callback: function(value, index, values) {
                 return value;
