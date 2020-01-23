@@ -73,7 +73,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' People';
+              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Donations';
             },
           },
           backgroundColor: '#434343',
@@ -89,7 +89,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('people_donating_per_year.csv');
+    const response = await fetch('donations_per_year.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
