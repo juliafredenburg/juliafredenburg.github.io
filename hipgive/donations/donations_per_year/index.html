@@ -45,9 +45,9 @@
         scales: {
           yAxes: [{
             ticks: {
-              max: 5,
-              min: 200000,
-              stepSize: 200000,
+              //max: 5,
+              //min: 200000,
+              //stepSize: 200000,
               callback: function(value, index, values) {
                 return '$' + (value < 1000000) ? value/1000 + 'K' : value/1000000 + 'M';
               },
