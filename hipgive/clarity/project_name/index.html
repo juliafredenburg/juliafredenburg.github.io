@@ -15,7 +15,7 @@
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
-  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -35,7 +35,7 @@
           borderColor: "#fcb846",
           borderWidth: 1,
           lineTension: 4,
-          hoverBackgroundColor: "#fa5047",
+          hoverBackgroundColor: "f5f5f5",
           hoverBorderColor: "#fa5047",
         //  barPercentage: .8
         }]
@@ -45,7 +45,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '';
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           }
         }
