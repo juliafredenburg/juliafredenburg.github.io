@@ -7,7 +7,7 @@
   <title>Average Donation Per Year</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
-    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
 
 </head>
@@ -27,18 +27,64 @@
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: data.xs,
-        datasets: [{
-          label: 'Average Donation Per Year',
-          data: data.ys,
-          fill: false,
-          backgroundColor: '#fcb846',
-          borderColor: '#fcb846',
-          borderWidth: 1,
-          lineTension: 4,
-          hoverBackgroundColor: '#fa5047',
-          barPercentage: .8
-        }]
+        labels: [data.ys,data.y2,data.y3,data.y4],
+        datasets: [
+          {
+            label: 'Donations',
+            data: data.ys,
+            fill: false,
+            backgroundColor: '#fcb846',
+            borderColor: '#fcb846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#fa5047',
+            barPercentage: .8
+          },
+          {
+            label: 'Donations',
+            data: data.y1,
+            fill: false,
+            backgroundColor: '#fa5047',
+            borderColor: '#fcb846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#fa5047',
+            barPercentage: .8
+          },
+          {
+            label: 'Donations',
+            data: data.y2,
+            fill: false,
+            backgroundColor: '#434343',
+            borderColor: '#fcb846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#fa5047',
+            barPercentage: .8
+          },
+          {
+            label: 'Donations',
+            data: data.y3,
+            fill: false,
+            backgroundColor: '#f5f5f5',
+            borderColor: '#fcb846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#fa5047',
+            barPercentage: .8
+          },
+          {
+            label: 'Donations',
+            data: data.y4,
+            fill: false,
+            backgroundColor: '#fcb846',
+            borderColor: '#fcb846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#fa5047',
+            barPercentage: .8
+          },
+        ]
       },
       options: {
         cornerRadius: 20,
