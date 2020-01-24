@@ -25,19 +25,20 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'horizontalBar',
+      type: 'doughnut',
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Donations Per Year',
+          label: 'Project Name Clarity',
           data: data.ys,
           fill: false,
-          backgroundColor: '#fcb846',
+          backgroundColor: ['#fcb846',"#fa5047"]
           borderColor: '#fcb846',
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#fa5047',
-          barPercentage: .8
+          hoverBorderColor:'#fa5047',
+        //  barPercentage: .8
         }]
       },
       options: {
@@ -46,7 +47,7 @@
           xAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '$' + value.toLocaleString('en-US')+' ';
+                return '' + value.toLocaleString('en-US')+'%';
               },
               beginAtZero: true,
               max: 7000,
@@ -56,7 +57,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Average Donation Per Project'
+              labelString: 'Project Name Clarity'
             }
           }],
           yAxes: [{
@@ -91,7 +92,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('average_donation_per_project.csv');
+    const response = await fetch('project_name.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
@@ -99,9 +100,9 @@
       const columns = row.split(',');
       const project = columns[0];
       xs.push(project);
-      const donations = columns[1];
-      ys.push(parseFloat(donations)); //make data from string to number and added mean payers of 14 degrees
-      console.log(project, donations);
+      const percent = columns[1];
+      ys.push(parseFloat(percent)); //make data from string to number and added mean payers of 14 degrees
+      console.log(project, percent);
     });
     return { xs, ys };
   }
