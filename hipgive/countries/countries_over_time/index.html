@@ -137,7 +137,7 @@
     const response = await fetch('countries_over_time.csv');
     const data = await response.text();
 
-    const table = data.split('\n').slice(4);
+    const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
       const time = columns[0];
