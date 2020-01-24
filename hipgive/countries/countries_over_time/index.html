@@ -88,20 +88,29 @@
   async function getData() {
     const xs = [];
     const ys = [];
+    const y2 = [];
+    const y3 = [];
+    const y4 = [];
 
     const response = await fetch('countries_over_time.csv');
     const data = await response.text();
 
-    const table = data.split('\n').slice(1);
+    const table = data.split('\n').slice(4);
     table.forEach(row => {
       const columns = row.split(',');
       const time = columns[0];
       xs.push(time);
       const elsalvador = columns[1];
       ys.push(parseFloat(elsalvador)); //make data from string to number and added mean payers of 14 degrees
-      console.log(time, elsalvador);
+      const guatemala = columns[2];
+      y2.push(parseFloat(guatemala));
+      const mexico = columns[3];
+      y3.push(parseFloat(mexico));
+      const us = columns[4];
+      y4.push(parseFloat(us));
+      console.log(time, elsalvador, guatemala, mexico, us);
     });
-    return { xs, ys };
+    return { xs, ys, y2, y3, y4 };
   }
 
 
