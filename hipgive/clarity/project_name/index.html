@@ -31,7 +31,6 @@
         datasets: [{
           label: 'Project Name Clarity',
           data: data.ys,
-          fill: false,
           backgroundColor: ['#fcb846',"#fa5047"]
           borderColor: '#fcb846',
           borderWidth: 1,
@@ -42,47 +41,13 @@
         }]
       },
       options: {
-        cornerRadius: 20,
-        scales: {
-          xAxes: [{
-            ticks: {
-              callback: function(value, index, values) {
-                return '' + value.toLocaleString('en-US')+'%';
-              },
-              beginAtZero: true,
-              max: 7000,
-            },
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Project Name Clarity'
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              callback: function(value, index, values) {
-                return value;
-              },
-              //fontStyle: 'strong'
-              fontSize: 9,
-            },
-            gridLines: {
-              display: false
-            }
-          }]
-        },
+
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
               return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '';
             },
-          },
-          backgroundColor: '#434343',
-          borderColor: '#f5f5f5',
-          borderWidth: 1,
-          displayColors: false
+          }
         }
       }
     });
