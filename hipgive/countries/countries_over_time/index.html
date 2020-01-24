@@ -89,17 +89,17 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('average_donation_per_year.csv');
+    const response = await fetch('countries_over_time.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const year = columns[0];
-      xs.push(year);
-      const donations = columns[1];
-      ys.push(parseFloat(donations)); //make data from string to number and added mean payers of 14 degrees
-      console.log(year, donations);
+      const time = columns[0];
+      xs.push(time);
+      const elsalvador = columns[1];
+      ys.push(parseFloat(elsalvador)); //make data from string to number and added mean payers of 14 degrees
+      console.log(time, elsalvador);
     });
     return { xs, ys };
   }
