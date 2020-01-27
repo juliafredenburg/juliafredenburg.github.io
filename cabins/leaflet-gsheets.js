@@ -156,6 +156,7 @@ function addPoints(data) {
       properties: {
         location: data[row].location,
         category: data[row].category,
+        url: data[row].url,
       },
     };
     marker.on({
@@ -165,6 +166,8 @@ function addPoints(data) {
           e.target.feature.properties.location;
         document.getElementById('sidebar-content').innerHTML =
           e.target.feature.properties.category;
+        document.getElementById('sidebar-content').innerHTML =
+          e.target.feature.properties.url;
         sidebar.open(panelID);
       },
     });
