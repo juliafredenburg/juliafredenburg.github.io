@@ -48,7 +48,7 @@ let panelID = 'my-info-panel';
 var panelContent = {
   id: panelID,
   tab: "<i class='fa fa-bars active'></i>",
-  pane: "<p id='sidebar-content'></p><a href='sidebar-content2'>link</a>",
+  pane: "<p id='sidebar-content'></p><a href=id=''sidebar-content2''>link</a>",
   title: "<h2 id='sidebar-title'>No state selected</h2>",
 };
 sidebar.addPanel(panelContent);
