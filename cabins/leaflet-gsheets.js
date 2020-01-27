@@ -49,6 +49,7 @@ var panelContent = {
   id: panelID,
   tab: "<i class='fa fa-bars active'></i>",
   pane: "<p id='sidebar-content'></p>",
+  pane2: "<p id='sidebar-content2'></p>",
   title: "<h2 id='sidebar-title'>No state selected</h2>",
 };
 sidebar.addPanel(panelContent);
@@ -166,7 +167,7 @@ function addPoints(data) {
           e.target.feature.properties.location;
         document.getElementById('sidebar-content').innerHTML =
           e.target.feature.properties.category;
-        document.getElementById('sidebar-content').innerHTML =
+        document.getElementById('sidebar-content2').innerHTML =
           e.target.feature.properties.url;
         sidebar.open(panelID);
       },
