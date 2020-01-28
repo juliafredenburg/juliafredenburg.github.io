@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Average Donation Per Project, Top 10 Projects</title>
+  <title>Donations that Included Tip to HIPGive</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Project Name Clarity',
+          label: 'Donations that Included Tip to HIPGive',
           data: data.ys,
           backgroundColor: ["#fcb846","#fa5047"],
           borderColor: "#fcb846",
@@ -67,7 +67,7 @@
       xs.push(tip);
       const percent = columns[1];
       ys.push(parseFloat(percent)); //make data from string to number and added mean payers of 14 degrees
-      console.log(project, percent);
+      console.log(tip, percent);
     });
     return { xs, ys };
   }
