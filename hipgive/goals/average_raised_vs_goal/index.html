@@ -33,8 +33,8 @@
           label: 'Average Amount Raised',
           data: data.ys,
           fill: false,
-          backgroundColor: '#fcb846',
-          borderColor: '#fcb846',
+          backgroundColor: ['#fcb846','#fcb846'],
+          borderColor: []'#fcb846','#fcb846'],
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#fa5047',
@@ -47,7 +47,7 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '' + value.toLocaleString('en-US')/* + ' People'*/;
+                return '$' + value.toLocaleString('en-US')/* + ' People'*/;
               },
               beginAtZero: true,
             },
@@ -56,7 +56,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Donations'
+              labelString: 'Average Amount Raised'
             }
           }],
           xAxes: [{
