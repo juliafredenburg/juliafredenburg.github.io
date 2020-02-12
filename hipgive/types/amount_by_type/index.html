@@ -25,7 +25,7 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'horizontalBar',
       data: {
         labels: data.xs,
         datasets: [{
@@ -43,7 +43,7 @@
       options: {
         cornerRadius: 20,
         scales: {
-          yAxes: [{
+          xAxes: [{
             ticks: {
               callback: function(value, index, values) {
                 return '$' + value.toLocaleString('en-US')+' ';
@@ -58,7 +58,7 @@
               labelString: 'Donations by Project Type'
             }
           }],
-          xAxes: [{
+          yAxes: [{
             ticks: {
               callback: function(value, index, values) {
                 return value;
