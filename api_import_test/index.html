@@ -8,11 +8,12 @@
 </head>
   <body>
     <script>
-    let pos= {
-      lat: -45,
-      lon: 112
-    };
-    console.log(pos)
+
+    async function getISS(){
+      const response = await fetch(
+        'https://api.wheretheiss.at/v1/satellites/25544'
+      );
+    }
     </script>
   </body>
 </html>
