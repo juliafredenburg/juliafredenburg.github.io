@@ -21,7 +21,7 @@
       data: {
           labels: data.xs,
           datasets: [{
-              label: 'Combined Land-Surface Air and Sea-Surface Water Temperature in C°',
+              label: 'COVID 19 NYC',
               data: data.ys,
               fill: false,
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -34,7 +34,7 @@
             yAxes: [{
                 ticks: {
                     callback: function(value, index, values) {
-                        return value + '°';
+                        return value + ' Deaths';
                     }
                 }
             }]
@@ -49,7 +49,12 @@ async function getData() {
   const xs = [];
   const ys = [];
 
-  const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv');
+  const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', function(response){
+    response = response.filter(function(row){
+      return row['county'] == 'New York City'
+    })
+    vis.datum(csv).call(chart);
+  });
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
