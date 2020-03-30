@@ -55,11 +55,11 @@ async function getData() {
   const table = data.split('\n').slice(1);
   table.forEach(row => {
     const columns = row.split(',');
-    const year = columns[0];
-    xs.push(year);
-    const temp = columns[1];
-    ys.push(parseFloat(temp) + 14); //make data from string to number and added mean temp of 14 degrees
-    console.log(year, temp);
+    const date = columns[0];
+    xs.push(date);
+    const deaths = columns[5];
+    ys.push(parseFloat(deaths)); //make data from string to number and added mean temp of 14 degrees
+    console.log(date, deaths);
   });
   return { xs, ys };
 }
