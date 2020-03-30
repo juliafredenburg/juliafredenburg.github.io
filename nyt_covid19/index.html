@@ -9,20 +9,21 @@
   <body>
 
 <h1> Where is the COVID19</h1>
-<p>latitude: <span id="state"></span>
+<p>state: <span id="state"></span>
 </p>
 
     <script>
     const api_url ='https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv';
     async function getISS() {
       const response = await fetch(api_url);
-      const data = await response.json();
+      const data = await response.text();
       const { state } = data;
 
       document.getElementById('state').textContent = state;
     }
 
     getISS();
+    console.log(data)
     </script>
   </body>
 </html>
