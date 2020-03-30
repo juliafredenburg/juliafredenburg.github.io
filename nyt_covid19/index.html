@@ -8,20 +8,18 @@
 </head>
   <body>
 
-<h1> Where is the ISS</h1>
-<p>latitude: <span id="lat"></span><br />
-<p>longitude: <span id="lon"></span>
+<h1> Where is the COVID19</h1>
+<p>latitude: <span id="state"></span>
 </p>
 
     <script>
-    const api_url ='https://api.wheretheiss.at/v1/satellites/25544';
+    const api_url ='https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv';
     async function getISS() {
       const response = await fetch(api_url);
       const data = await response.json();
-      const { latitude, longitude } = data;
+      const { state } = data;
 
-      document.getElementById('lat').textContent = latitude;
-      document.getElementById('lon').textContent = longitude;
+      document.getElementById('state').textContent = state;
     }
 
     getISS();
