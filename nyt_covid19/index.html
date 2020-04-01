@@ -49,18 +49,9 @@ async function getData() {
   const xs = [];
   const ys = [];
 
-  const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', function(data){
-    filteredData = data.filter(function(row){
-      return row['county'] == 'New York City'
-    })
+  const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
   });
-  freqData = filteredData.map(function(d) {
-    return {
-      date: d.date,
-      death: d.death
-    }
-  });
-
+  
 console.log("freqData", freqData);
 
   const data = await response.text();
