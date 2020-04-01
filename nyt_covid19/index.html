@@ -51,9 +51,6 @@ async function getData() {
 
   const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv');
   const data = await response.text();
-console.log("freqData", freqData);
-
-  const data = await response.text();
 
   const table = data.split('\n').slice(1);
   table.forEach(row => {
