@@ -55,12 +55,6 @@ async function getData() {
   const table = data.split('\n').slice(1);
   table.forEach(row => {
     const columns = row.split(',');
-    function checkCounty(county){
-      return county = "New York City";
-    };
-    function myFunction(){
-      document.getElementById("demo").innerHTML = counties.filter(checkCounty);
-    };
     const date = columns[0];
     xs.push(date);
     const deaths = columns[5];
