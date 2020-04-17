@@ -47,7 +47,7 @@
 // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
 async function getData() {
   const xs = [];
-  const county = [];
+  const nyc = [];
   const ys = [];
 
   const response = await fetch('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv');
@@ -59,16 +59,18 @@ async function getData() {
     const date = columns[0];
     xs.push(date); //add new items to an array
     const county = columns[1];
-    county.push(county);
+    nyc.push(county);
     const deaths = columns[5];
     ys.push(parseFloat(deaths)); //make data from string to number & add new items to an array
-    console.log(date, deaths);
+    // console.log(date, county, deaths);
+    if (county == "New York City") {
+      return { xs, nyc, ys }; // return value from getData function
+    }
   });
-  if (county = "New York City") {
-    return { xs, ys }; // return value from getData function
-  }
+  console.log(xs, nyc, ys);
+
 };
-  console.log(date, county, deaths);
+
 
 
   </script>
